@@ -1,10 +1,10 @@
 // import { useState } from "react";
 // import { useEffect } from "react";
-
+import { Outlet, Link } from "react-router-dom";
 import { useState } from "react"
 // import { Form } from "react-router-dom"
 
-function AdminSec() {
+function AdminSec({addUser}) {
 
     const [employees, setEmployees] = useState([])
 
@@ -13,24 +13,43 @@ function AdminSec() {
     const [position, setPosition] = useState('')
     
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { 
         e.preventDefault();
         console.log(name)
         console.log(last)
         console.log(position)
+        
+        
         let employee={
             name,
             last,
             position,
         };
 
-        setEmployees([...employees,employee]);
+       
 
+        setEmployees([...employees,employee]);
+        
+        
         // เพิ่มแค่ให้ string เปล่า
         setName("");
         setLast("");
         setPosition("");
+
+        
       };
+    
+    const deleteEmployee = (index) => {
+      // const updateEmployees =[...employees];
+      // updateEmployees.splice(index, 1);
+      // setEmployees(updateEmployees);
+
+      setEmployees(employees.filter((_, i) => i !== index));
+      // console.log(employees)
+    };
+
+
+    
  
 
     return (
@@ -39,6 +58,24 @@ function AdminSec() {
             Generation Thailand<br />
             React - AdminSector
         </h1>  
+
+        <div > 
+          <button className="rounded-lg shadow-md px-4 py-2">
+            <Link to="/user">
+                User
+            </Link>
+          </button>
+          <button className="rounded-lg shadow-md px-4 py-2">
+            <Link to="/admin">
+                Admin
+            </Link>
+          </button>
+        </div>
+
+
+
+
+
         <h2>
             Create User Here
         </h2>
@@ -67,13 +104,14 @@ function AdminSec() {
                 <td>{employee.name}</td>
                 <td>{employee.last}</td>
                 <td>{employee.position}</td>
-                <td><button className="text-red-500">Delete</button></td>
+                <td><button className="text-red-500" onClick={() => deleteEmployee(index)}>Delete</button></td>
             </tr>
             ))}
           </tbody>
 
 
         </table>
+        <Outlet />
       </div>
      
     )

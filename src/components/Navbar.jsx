@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 
-const Layout = () => {
+const Navbar = () => {
   return (
     <div>
       <nav className="bg-[#E8E8E8] p-4 border-b border-black"> 
@@ -22,4 +22,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Navbar;

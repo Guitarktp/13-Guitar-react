@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from './components/Layout.jsx';
+import Navbar from './components/Navbar.jsx';
 import OwnerPage from './components/OwnerPage.jsx';
 import UserSec from './components/UserSector.jsx';
 import AdminSec from './components/AdminSector.jsx';
@@ -12,7 +12,7 @@ import AdminSec from './components/AdminSector.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Navbar />,
     children: [
       {
         path: "",
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/owner",
-    element: <Layout />,
+    element: <Navbar />,
     children: [
       {
         path: "",
@@ -32,17 +32,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/user",
-    element: <Layout />,
+    element: <Navbar />, 
     children: [
       {
         path: "",
         element: <UserSec />,
+       
       },
+      
     ],
   },
   {
     path: "/admin",
-    element: <Layout />,
+    element: <Navbar />,
     children: [
       {
         path: "",
@@ -56,4 +58,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
 );
