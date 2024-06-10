@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import AdminSec from "./AdminSector";
 
-const UserSec = ({employees, name, last, position}) => {
+const UserSec = ({employees}) => {
   return (
     <div className="flex flex-col justify-center items-center ">
       <h1 className="font-bold text-[48px] mt-12">

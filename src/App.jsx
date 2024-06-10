@@ -54,9 +54,7 @@ function App() {
           <Navbar />
           <UserSec 
           employees={employees}
-          name={name}
-          last={last}
-          position={position}/>
+          />
         </div>
       ),
     },
