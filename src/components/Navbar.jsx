@@ -11,7 +11,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/owner" className=" font-bold hover:text-gray-400 text-[20px]">
+            <Link to="/Owner" className=" font-bold hover:text-gray-400 text-[20px]">
               Owner
             </Link>
           </li>

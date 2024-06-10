@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 
 
-function HomePage() {
+const HomePage = () => {
  
 
     return (
@@ -12,12 +12,12 @@ function HomePage() {
         </h1>
         <div > 
           <button className="rounded-lg shadow-md px-4 py-2">
-            <Link to="/user">
+            <Link to="/User">
                 User
             </Link>
           </button>
           <button className="rounded-lg shadow-md px-4 py-2">
-            <Link to="/admin">
+            <Link to="/Admin">
                 Admin
             </Link>
           </button>
